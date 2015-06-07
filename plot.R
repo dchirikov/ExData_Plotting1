@@ -108,41 +108,77 @@ png(width=480,height=480,filename='plot4.png')
 par(mfcol = c(2,2))
 # draw top left graph
 # draw empty plot with header
-plot(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Global_active_power,main='',xlab='',ylab='Global Active Power',type='n')
+plot(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Global_active_power,
+    main='',
+    xlab='',
+    ylab='Global Active Power',
+    type='n')
 # add lines
-lines(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Global_active_power)
-
+lines(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Global_active_power
+)
 # draw left bottom
 # draw empty plot with header
 plot(household_power_consumption_filtered$Date.Time,
     household_power_consumption_filtered$Sub_metering_1,
-        ylab = 'Energy sub methering',
-            main = '', xlab = '', type = 'n')
+    ylab = 'Energy sub methering',
+    main = '',
+    xlab = '',
+    type = 'n'
+)
 # and add lines
 lines(household_power_consumption_filtered$Date.Time,
     household_power_consumption_filtered$Sub_metering_1,
-        col = 'black')
+    col = 'black'
+)
 lines(household_power_consumption_filtered$Date.Time,
     household_power_consumption_filtered$Sub_metering_2,
-        col = 'red')
+    col = 'red'
+)
 lines(household_power_consumption_filtered$Date.Time,
     household_power_consumption_filtered$Sub_metering_3,
-        col = 'blue')
+    col = 'blue'
+)
 # time to add legend
 legend("topright",
     legend=c('Sub_metering_1','Sub_metering_2','Sub_metering_3'),
-        lwd = 1, col=c('black','red','blue'))
+    lwd = 1,
+    col=c('black','red','blue')
+)
 
 # righ top drawing
 # empty plot with header
-plot(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Voltage,main='',xlab='datetime',ylab='Voltage',type='n')
+plot(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Voltage,
+    main='',
+    xlab='datetime',
+    ylab='Voltage',
+    type='n'
+)
 # add lines
-lines(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Voltage)
+lines(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Voltage
+)
 
 # the right bottom
 # empty area with header
-plot(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Global_reactive_power,main='',xlab='datetime',ylab='Global_reactive_power',type='n')
+plot(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Global_reactive_power,
+    main='',
+    xlab='datetime',
+    ylab='Global_reactive_power',
+    type='n'
+)
 # lines
-lines(household_power_consumption_filtered$Date.Time,household_power_consumption_filtered$Global_reactive_power)
+lines(
+    household_power_consumption_filtered$Date.Time,
+    household_power_consumption_filtered$Global_reactive_power
+)
 # close png file and flush data to disk
 dev.off()
