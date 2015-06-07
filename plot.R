@@ -1,5 +1,5 @@
 # Write small function to read data for drawing
-# will use defaults from assessment - 2007-02-01 and 2007-02-02.
+# will use defaults from assessment - 2007-02-01 and 2007-02-02 (uper boud will be 2007-02-03 00:00:00).
 read.data <- function(stime = '2007-02-01 00:00:00',etime = '2007-02-03 00:00:00') {
     # not sure if we have txt data avaliable. If not - download and unzip it.
     if (!file.exists('household_power_consumption.txt')) {
